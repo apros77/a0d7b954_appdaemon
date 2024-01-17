@@ -6,12 +6,12 @@ import pathlib
 
 # set the template matching and
 # non-maximum suppression thresholds
-thresh = 0.35
-nms_thresh = 0.95
+thresh = 0.5
+nms_thresh = 0.7
 
 # load the main image and the template image
 image = cv2.imread("/config/ssocr-SevenSegment_OCR_c1c_f32216776.png")
-template = cv2.imread("/config/www/auer/target1.png")
+template = cv2.imread("/config/www/auer/target2.png")
 # make a copy of the image
 image_copy = image.copy()
 
