@@ -1,0 +1,14 @@
+---
+hello_world:
+  module: hello
+  class: HelloWorld
+  log_level: DEBUG
+  
+#snap_lcd_auer:
+  #module: lcd_auer #plik nazwa lcd_auer.py
+  #class: SnapLcdAuer #nazwa klasy w pliku
+  #log_level: DEBUG
+  
+#stale_sensor:
+  #module: stale_sensor #plik nazwa lcd_auer.py
+  #class: StaleSensor #nazwa klasy w pliku  
