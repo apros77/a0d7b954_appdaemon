@@ -53,13 +53,33 @@ indices = cv2.dnn.NMSBoxes(
 
 print("Number of matches found after NMS:", len(indices))
 
+minX = 1000
+maxX = 0
+minY = 1000
+maxY = 0
+xc = 0
+yc = 0
 for i in indices:
     (x, y, w, h) = boxes[i][0], boxes[i][1], boxes[i][2], boxes[i][3]
     cv2.rectangle(image, (x, y), (w, h), (0, 255, 0), 2)
     print("x", x)
     print("y", y)
-    cv2.circle(image,(int(x+(template_w/2)),int(y+(template_h/2))), 10,(0,0,255),-1)
+    xc = int(x+(template_w/2))
+    yc = int(y+(template_h/2))
+    cv2.circle(image,(xc,yc), 10,(0,0,255),-1)
+    if xc < minX:
+        minX = xc
+    if xc > maxX:
+        maxX = xc
+    if yc < minY:
+        minY = yc
+    if yc > maxY:
+        maxY = yc
 
+print("minX", minX)
+print("maxX", maxX)
+print("minY", minY)
+print("maxY", maxY)
+finalImage = image[minY:maxY,minX:maxX]
 cv2.imwrite("/config/www/auer/image2.png", image)
-#image.save("/config/www/auer/image2.png")
-#cv2.waitKey(0)
+cv2.imwrite("/config/www/auer/imagecrop2.png", finalImage)
