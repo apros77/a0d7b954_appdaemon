@@ -16,7 +16,7 @@ from datetime import datetime, time, timedelta
 
 class SnapLcdAuer(hass.Hass):
   def initialize(self):
-     self.run_every(self.lcd_ha, "now", 10 * 60)
+     self.run_every(self.lcd_ha, "now", 1 * 360)
      self.log("$$$$$$$$$$$$$$$$Hello from AppDaemon")
      self.log("$$$$$$$$$$$$$$$$You are now ready to run Apps!")
      self.log("*****  " + dirpath)

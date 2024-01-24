@@ -1,9 +1,9 @@
----
+
 secrets: /homeassistant/secrets.yaml
 appdaemon:
   latitude: 51.21871804064368
   longitude: 22.72803977995486
-  elevation: 2
+  elevation: 227
   time_zone: Europe/Warsaw
   plugins:
     HASS:
